@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Naif Café Las Condes | Café, Brunch y Gastronomía en Santiago</title>
+<meta name="description" content="Naif Café Las Condes: café de especialidad, brunch y pastelería artesanal en Av. Presidente Errázuriz 3471, Las Condes. Un lugar para quedarse un poco más.">
+
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:title" content="Naif Café Las Condes">
+<meta property="og:description" content="Café, brunch y momentos que se disfrutan sin prisa, en el corazón de Las Condes.">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#171512">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23171512'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' fill='%23F3EBDD' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Naif Café Las Condes",
+  "image": "",
+  "telephone": "+56998222648",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Presidente Errázuriz 3471",
+    "addressLocality": "Las Condes",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.4212164,
+    "longitude": -70.5921681
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "20:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/naifcafe_lascondes"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#top" class="navbar__logo">Naif</a>
+    <nav class="navbar__links" id="navLinks" aria-label="Navegación principal"></nav>
+    <a class="navbar__cta" id="navCta" href="#ubicacion">Visitar Naif</a>
+    <button class="navbar__toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu__top">
+    <span class="mobile-menu__logo">Naif</span>
+    <button class="mobile-menu__close" id="menuClose" aria-label="Cerrar menú">&times;</button>
+  </div>
+  <nav class="mobile-menu__links" id="mobileNavLinks" aria-label="Navegación móvil"></nav>
+  <a class="mobile-menu__cta" id="mobileCta" href="#ubicacion">Visitar Naif</a>
+</div>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero__media" aria-hidden="true">
+      <div class="hero__placeholder">
+        <span class="ph-caption">Fotografía pendiente — fachada / interior de Naif Café</span>
+      </div>
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow" id="heroEyebrow"></p>
+      <h1 class="hero__title" id="heroTitle"></h1>
+      <p class="hero__subtitle" id="heroSubtitle"></p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--light" id="heroCta"></a>
+        <a href="#ubicacion" class="btn btn--ghost" id="heroCtaSecondary"></a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ================= EXPERIENCIA ================= -->
+  <section class="experience" id="experiencia">
+    <div class="experience__grid">
+      <div class="experience__media">
+        <div class="ph-block ph-block--tall">
+          <span class="ph-caption">Fotografía pendiente — ambiente / mesas de Naif</span>
+        </div>
+        <div class="ph-block ph-block--overlap">
+          <span class="ph-caption">Fotografía pendiente — detalle café</span>
+        </div>
+      </div>
+      <div class="experience__text">
+        <p class="eyebrow" id="expEyebrow"></p>
+        <h2 class="section-title" id="expTitle"></h2>
+        <p class="section-body" id="expBody"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALERÍA ================= -->
+  <section class="gallery" id="galeria">
+    <div class="gallery__head">
+      <p class="eyebrow">— Galería</p>
+      <h2 class="section-title">El espacio, la comida,<br>el detalle.</h2>
+    </div>
+    <div class="gallery__grid" id="galleryGrid"></div>
+  </section>
+
+  <!-- ================= CAFÉ ================= -->
+  <section class="coffee" id="cafe">
+    <div class="coffee__media">
+      <div class="ph-block ph-block--full">
+        <span class="ph-caption">Fotografía pendiente — macro de espresso / preparación</span>
+      </div>
+    </div>
+    <div class="coffee__content">
+      <p class="eyebrow" id="coffeeEyebrow"></p>
+      <h2 class="section-title section-title--light" id="coffeeTitle"></h2>
+      <p class="section-body section-body--light" id="coffeeBody"></p>
+    </div>
+  </section>
+
+  <!-- ================= MENÚ ================= -->
+  <section class="menu-section" id="menu">
+    <div class="menu-section__head">
+      <p class="eyebrow">— La carta</p>
+      <h2 class="section-title">Café, brunch<br>y algo dulce.</h2>
+      <p class="menu-section__note">Una selección de la carta. Precios en pesos chilenos (CLP).</p>
+    </div>
+
+    <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Categorías del menú"></div>
+
+    <div class="menu-panels" id="menuPanels"></div>
+
+    <div class="menu-section__footer">
+      <a id="menuPdfLink" class="btn btn--outline" href="#" target="_blank" rel="noopener">Ver carta completa (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ================= POR QUÉ NAIF ================= -->
+  <section class="why" id="por-que">
+    <p class="eyebrow" id="whyEyebrow"></p>
+    <div class="why__grid" id="whyGrid"></div>
+  </section>
+
+  <!-- ================= RESEÑAS ================= -->
+  <section class="reviews" id="resenas">
+    <div class="reviews__head">
+      <p class="eyebrow">— Reseñas</p>
+      <h2 class="section-title">Lo que dicen<br>quienes ya vinieron.</h2>
+    </div>
+
+    <div class="reviews__body" id="reviewsBody">
+      <!-- populated by JS: real reviews if available, otherwise honest pending-state -->
+    </div>
+
+    <a id="reviewsLink" class="link-underline" href="#" target="_blank" rel="noopener">Ver todas las reseñas en Google →</a>
+  </section>
+
+  <!-- ================= UBICACIÓN ================= -->
+  <section class="location" id="ubicacion">
+    <div class="location__grid">
+      <div class="location__info">
+        <p class="eyebrow">— Ubicación</p>
+        <h2 class="section-title">Nos encontramos<br>en Las Condes.</h2>
+
+        <dl class="location__details">
+          <div>
+            <dt>Dirección</dt>
+            <dd id="locAddress"></dd>
+          </div>
+          <div>
+            <dt>Teléfono</dt>
+            <dd><a id="locPhone" class="link-underline"></a></dd>
+          </div>
+          <div>
+            <dt>Horario</dt>
+            <dd id="locHours"></dd>
+          </div>
+        </dl>
+
+        <div class="location__actions">
+          <a id="locDirections" class="btn btn--dark" target="_blank" rel="noopener">Cómo llegar</a>
+          <a id="locCall" class="btn btn--outline">Llamar</a>
+          <a id="locMaps" class="btn btn--outline" target="_blank" rel="noopener">Ver en Google Maps</a>
+        </div>
+      </div>
+
+      <div class="location__map">
+        <button class="map-placeholder" id="mapTrigger" aria-label="Cargar mapa interactivo de Google Maps">
+          <span class="map-placeholder__pin">📍</span>
+          <span class="map-placeholder__text">Toca para cargar el mapa</span>
+        </button>
+        <div class="map-embed" id="mapEmbed" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="final-cta">
+    <div class="final-cta__media" aria-hidden="true">
+      <div class="hero__placeholder">
+        <span class="ph-caption">Fotografía pendiente — mesa servida / despedida cálida</span>
+      </div>
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="final-cta__content">
+      <h2 class="final-cta__title" id="finalCtaTitle"></h2>
+      <div class="final-cta__actions">
+        <a href="#menu" class="btn btn--light" id="finalCtaPrimary"></a>
+        <a href="#ubicacion" class="btn btn--ghost" id="finalCtaSecondary"></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotografías" hidden>
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Foto anterior">&#8249;</button>
+  <div class="lightbox__figure" id="lightboxFigure"></div>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Foto siguiente">&#8250;</button>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">Naif Café</span>
+      <span class="footer__sub">Las Condes, Santiago</span>
+    </div>
+    <div class="footer__col" id="footerAddress"></div>
+    <div class="footer__col" id="footerContact"></div>
+    <div class="footer__col" id="footerHours"></div>
+  </div>
+  <div class="footer__bottom">
+    <span id="footerCopy"></span>
+    <a id="footerMenuLink" href="#" target="_blank" rel="noopener">Menú</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
