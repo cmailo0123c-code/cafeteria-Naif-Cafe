@@ -269,7 +269,7 @@ section{position:relative;}
 .team-desc{font-size:13px;color:var(--sand);line-height:1.6;margin-top:14px;max-width:320px;}
 @media(max-width:900px){.team-grid{grid-template-columns:1fr;gap:22px;}.team-photo{height:320px;}}
 
-.menu-tabs{display:flex;flex-wrap:wrap;gap:8px 34px;margin-bottom:64px;border-bottom:1px solid var(--line);padding-bottom:26px;}
+.menu-tabs{display:flex;flex-wrap:wrap;gap:18px 34px;margin-bottom:64px;border-bottom:1px solid var(--line);padding-bottom:26px;}
 .menu-tab{
   font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--sand);
   padding-bottom:6px;position:relative;transition:color .35s;
@@ -278,35 +278,27 @@ section{position:relative;}
 .menu-tab.active{color:var(--cream);}
 .menu-tab.active::after{width:100%;}
 
-.menu-body{display:grid;grid-template-columns:1.15fr .85fr;gap:0 60px;}
-.menu-scroll{max-height:640px;overflow-y:auto;padding-right:16px;scrollbar-width:thin;scrollbar-color:var(--espresso-3) transparent;}
+.menu-body{width:100%;}
+.menu-scroll{
+  max-height:680px;overflow-y:auto;padding:4px 20px 4px 0;
+  scrollbar-width:thin;scrollbar-color:var(--espresso-3) transparent;
+}
 .menu-scroll::-webkit-scrollbar{width:5px;}
 .menu-scroll::-webkit-scrollbar-thumb{background:var(--espresso-3);}
 .menu-panel{display:none;}
-.menu-panel.active{display:block;}
+.menu-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:0 56px;position:relative;}
+.menu-panel.active::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line);}
+@media(max-width:960px){.menu-panel.active::before{display:none;}}
 .menu-item{
-  display:flex;justify-content:space-between;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);cursor:pointer;
+  display:flex;justify-content:space-between;gap:24px;padding:28px 0;border-bottom:1px solid var(--line);
 }
-.menu-item:first-child{padding-top:0;}
-.menu-item-l{max-width:70%;}
-.menu-item h4{font-family:'Fraunces',serif;font-weight:500;font-size:19px;letter-spacing:.01em;transition:color .3s;}
-.menu-item:hover h4{color:var(--gold-soft);}
-.menu-item p{font-size:12.8px;color:var(--sand);margin-top:7px;line-height:1.6;}
-.menu-item .price{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--gold-soft);white-space:nowrap;padding-top:2px;}
-
-.menu-preview{position:sticky;top:130px;height:560px;overflow:hidden;background:var(--espresso-3);}
-.menu-preview img{opacity:0;transform:scale(1.08);position:absolute;inset:0;transition:opacity .6s var(--ease), transform 1.1s var(--ease);}
-.menu-preview img.show{opacity:1;transform:scale(1);}
-.menu-preview .mp-cap{
-  position:absolute;left:26px;bottom:26px;z-index:3;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--cream);background:rgba(21,14,10,.55);backdrop-filter:blur(6px);padding:10px 16px;
-  opacity:0;transition:opacity .5s var(--ease);
-}
-.menu-preview .mp-cap.show{opacity:1;}
+.menu-item h4{font-family:'Fraunces',serif;font-weight:500;font-size:18px;letter-spacing:.01em;line-height:1.3;}
+.menu-item-l{max-width:75%;}
+.menu-item p{font-size:12.8px;color:var(--sand);margin-top:9px;line-height:1.65;}
+.menu-item .price{font-family:'Fraunces',serif;font-style:italic;font-size:16.5px;color:var(--gold-soft);white-space:nowrap;padding-top:2px;}
 
 @media(max-width:960px){
-  .menu-body{grid-template-columns:1fr;}
-  .menu-preview{display:none;}
+  .menu-panel.active{grid-template-columns:1fr;}
   .menu-item-l{max-width:78%;}
   .menu-item h4{font-size:16.5px;}
   .menu-scroll{max-height:none;overflow:visible;padding-right:0;}
@@ -600,382 +592,377 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
     <div class="menu-body reveal">
       <div class="menu-scroll">
         <div class="menu-panel active" data-panel="cafe">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Ristretto">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Ristretto</h4><p>15ml de extracción de café.</p></div>
             <div class="price">2.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Espresso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Espresso</h4><p>30ml de extracción de café.</p></div>
             <div class="price">2.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Doppio (Espresso doble)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Doppio (Espresso doble)</h4><p>60ml de extracción de café.</p></div>
             <div class="price">3.000</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Lungo">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Lungo</h4><p>Espresso + 30ml de agua.</p></div>
             <div class="price">2.600 / 3.000</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Americano">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Americano</h4><p>Espresso + 90ml de agua.</p></div>
             <div class="price">2.600 / 3.000</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Macchiato">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Macchiato</h4><p>Espresso + espuma de leche.</p></div>
             <div class="price">2.900 / 3.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Capuccino">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Capuccino</h4><p>Espresso + leche texturizada + espuma de leche.</p></div>
             <div class="price">3.100 / 3.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Cortado">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cortado</h4><p>Espresso + leche texturizada. Simple o doble.</p></div>
             <div class="price">3.100 / 3.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Latte">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Latte</h4><p>Espresso + leche texturizada + poca espuma de leche.</p></div>
             <div class="price">3.700 / 4.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1000&q=80" data-cap="Mocaccino">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Mocaccino</h4><p>Espresso + cacao en polvo + leche texturizada + espuma de leche.</p></div>
             <div class="price">3.900 / 4.400</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="filtrados">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=80" data-cap="Filtrado: Chemex">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Filtrado: Chemex</h4><p>250ml de café filtrado en método Chemex.</p></div>
             <div class="price">4.500</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=80" data-cap="Filtrado: V60">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Filtrado: V60</h4><p>250ml de café filtrado en método V60.</p></div>
             <div class="price">4.500</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=80" data-cap="Filtrado: Origami">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Filtrado: Origami</h4><p>250ml de café filtrado en método Origami.</p></div>
             <div class="price">4.500</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="frias">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Affogato">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Affogato</h4><p>Espresso infusionado sobre helado de vainilla.</p></div>
             <div class="price">4.400</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Copa de café helado">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Copa de café helado</h4><p>Espresso + helado de vainilla + leche fría + syrup de chocolate + crema chantilly.</p></div>
             <div class="price">6.400</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Espresso Tonic">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Espresso Tonic</h4><p>Espresso + rodajas de naranja + hielo + agua tónica.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Cold Brew">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cold Brew</h4><p>Extracción de café en frío por más de 12 horas.</p></div>
             <div class="price">3.500 / 4.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Café Frío">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Café Frío</h4><p>Espresso + rodajas de naranja + hielo + gaseosa de jengibre.</p></div>
             <div class="price">4.500</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Iced-tea">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Iced-tea</h4><p>Té helado, a su elección.</p></div>
             <div class="price">3.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=80" data-cap="Chai-Latte">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Chai-Latte</h4><p>Chai-Latte clásico o con esencia de vainilla o de coco, texturizado en leche.</p></div>
             <div class="price">3.900</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="te">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té negro — Ceylon Sonata">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té negro — Ceylon Sonata</h4><p>Clásico té de Sri Lanka.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té negro — English Breakfast">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té negro — English Breakfast</h4><p>Mezcla de tés negros de Keemun, China.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té negro — Earl Gray Bravo">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té negro — Earl Gray Bravo</h4><p>Cáscaras de naranja, esencia natural de bergamota y aciano azul.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té blanco — Silver Needle">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té blanco — Silver Needle</h4><p>Té blanco puro proveniente de la región de Fujian, China.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té blanco — Arándanos">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té blanco — Arándanos</h4><p>Té blanco, arándanos y esencia natural de arándanos.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té verde — Sencha Overture">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té verde — Sencha Overture</h4><p>Puro y fino de Shizuoka, Japón.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té verde — Verde Cítrico">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té verde — Verde Cítrico</h4><p>Cáscara de naranja, flor de caléndula, esencia natural de limón y naranja.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té Chai — Masala">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té Chai — Masala</h4><p>Té negro, cardamomo, jengibre, canela, clavos de olor y esencia natural de canela.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1000&q=80" data-cap="Té Chai — Manzana">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Té Chai — Manzana</h4><p>Té negro, canela, jengibre, cardamomo, cáscaras de naranja, clavos de olor y trozos de manzana.</p></div>
             <div class="price">3.200</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="brunch">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1000&q=80" data-cap="Brunch Naif">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Brunch Naif</h4><p>4 panqueques americanos + plato con selección de frutas mixtas + mantequilla + syrup de maple.</p></div>
             <div class="price">11.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1000&q=80" data-cap="Brunch Açaí">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Brunch Açaí</h4><p>Bowl de açaí helado + granola artesanal + selección de frutas de estación. Incluye jugo natural y café o té a elección.</p></div>
             <div class="price">12.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1000&q=80" data-cap="Bacon Brunch">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Bacon Brunch</h4><p>Paila de huevos con crumble de tocino + palta fileteada + tostadas (2) de pan artesanal. Incluye jugo natural y café o té a elección.</p></div>
             <div class="price">13.900</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="panes">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Planchado Jamón/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Planchado Jamón/Queso</h4><p>En pan artesanal, multigrano o masa madre, jamón de pechuga de pavo y queso gouda.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Paila de Huevos">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Paila de Huevos</h4><p>Huevos revueltos de gallina feliz (4), acompañados con tostadas (2).</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Mermelada/Mantequilla">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Mermelada/Mantequilla</h4><p>Tostadas (2) de nuestro pan artesanal, con ración de mermelada y mantequilla.</p></div>
             <div class="price">4.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Palta/Mantequilla">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Palta/Mantequilla</h4><p>Pan artesanal con palta y mantequilla.</p></div>
             <div class="price">5.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Pollo/Palta">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Pollo/Palta</h4><p>Pechuga de pollo mechada con palta hass y un toque de mayonesa.</p></div>
             <div class="price">5.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Capresse">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Capresse</h4><p>Queso mozzarella fundido con tomatitos cherry y pesto de la casa.</p></div>
             <div class="price">5.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Palta/Huevo Pochado">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Palta/Huevo Pochado</h4><p>Huevos frescos de gallina feliz (2) pasados por agua y servidos con palta hass.</p></div>
             <div class="price">6.100</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Huevo Pochado/Jamón Serrano/Ricotta">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Huevo Pochado/Jamón Serrano/Ricotta</h4><p>Huevos pasados por agua, servidos sobre una cama de ricotta y jamón serrano.</p></div>
             <div class="price">7.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Huevo Pochado/Salmón/Palta">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Huevo Pochado/Salmón/Palta</h4><p>Huevos pasados por agua, servidos con palta hass y láminas de salmón ahumado en frío.</p></div>
             <div class="price">9.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" data-cap="Tostadas Salmón Ahumado">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tostadas Salmón Ahumado</h4><p>Finas láminas de salmón ahumado en frío, aceitunas, ricotta, palta hass, alcaparras y mix de lechugas.</p></div>
             <div class="price">12.400</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="arepas">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Arepa Jamón/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Arepa Jamón/Queso</h4><p>Rellena con lojas de jamón de pechuga de pavo.</p></div>
             <div class="price">5.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Arepa Pollo/Palta">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Arepa Pollo/Palta</h4><p>Rellena con pechuga de pollo mechada y un toque de mayonesa.</p></div>
             <div class="price">5.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Arepa Capresse">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Arepa Capresse</h4><p>Queso mozzarella fundido con tomates cherry y pesto de la casa.</p></div>
             <div class="price">5.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Arepa Porotos/Queso (Dominó)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Arepa Porotos/Queso (Dominó)</h4><p>Porotos negros de la casa, acompañados con queso blanco.</p></div>
             <div class="price">5.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Arepa Pulled Pork/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Arepa Pulled Pork/Queso</h4><p>Rellena con mechada de lomo de cerdo ahumado y queso gouda laminado.</p></div>
             <div class="price">6.100</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Arepa Mechada/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Arepa Mechada/Queso</h4><p>Mechada de la casa y queso gouda laminado.</p></div>
             <div class="price">6.100</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Cachapa con Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cachapa con Queso</h4><p>Tortilla dulce de choclo, rellena con queso blanco bajo en grasas.</p></div>
             <div class="price">6.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Cachapa con Jamón/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cachapa con Jamón/Queso</h4><p>Rellena con jamón y queso blanco bajo en grasas.</p></div>
             <div class="price">6.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Cachapa con Mechada/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cachapa con Mechada/Queso</h4><p>Rellena con queso blanco bajo en grasas y mechada de la casa.</p></div>
             <div class="price">7.600</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=1000&q=80" data-cap="Cachapa con Pulled Pork/Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cachapa con Pulled Pork/Queso</h4><p>Con queso blanco bajo en grasas y mechada de lomo de cerdo ahumado.</p></div>
             <div class="price">7.600</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="sandwiches">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Sandwich de Pollo">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Sandwich de Pollo</h4><p>Pechuga de pollo finamente troceada con salsa tártara, mix de lechugas y rulos de betarraga.</p></div>
             <div class="price">8.400</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Sandwich de Pulled Pork">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Sandwich de Pulled Pork</h4><p>Tierno pulled pork cocinado por varias horas a baja temperatura, coleslaw y mix de lechugas.</p></div>
             <div class="price">9.400</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Sandwich Roast Beef">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Sandwich Roast Beef</h4><p>Roast beef de filete de vacuno, peras pochadas y crocante de nueces.</p></div>
             <div class="price">10.400</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Sandwich de Mechada">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Sandwich de Mechada</h4><p>Mechada de la casa, queso gouda, palta laminada, mix de lechugas, ruedas de tomate y mayo.</p></div>
             <div class="price">11.400</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="cualquierhora">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Copa de Yogurt con Granola">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Copa de Yogurt con Granola</h4><p>Yogurt natural acompañado de una porción de nuestra granola artesanal.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Copa de Yogurt, Granola y Frutas">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Copa de Yogurt, Granola y Frutas</h4><p>Yogurt natural, granola artesanal y ración de frutas mixtas.</p></div>
             <div class="price">5.400</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Bowl de Açaí">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Bowl de Açaí</h4><p>Açaí helado acompañado de una porción de granola artesanal y frutas mixtas.</p></div>
             <div class="price">7.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80" data-cap="Waffles Naif">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Waffles Naif</h4><p>Waffle de la casa, coronado con Nutella, selección de frutas y azúcar flor.</p></div>
             <div class="price">7.200</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="ensaladas">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1000&q=80" data-cap="Ensalada Naif">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Ensalada Naif</h4><p>Mix de lechugas verdes, bites de queso mozzarella, crocante de nueces, frutillas y dressing de mostaza miel.</p></div>
             <div class="price">6.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1000&q=80" data-cap="Ensalada César">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Ensalada César</h4><p>Mix de lechugas verdes, crutones crocantes, dressing césar, queso parmesano y fingers de pollo a la plancha.</p></div>
             <div class="price">8.300</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1000&q=80" data-cap="Ensalada Capresse">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Ensalada Capresse</h4><p>Selección de tomates con bites de queso mozzarella, aceite de oliva, pesto de la casa y orégano.</p></div>
             <div class="price">6.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=1000&q=80" data-cap="Cremas y Sopas">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cremas y Sopas</h4><p>Muestra exquisita crema gourmet, servida con pan artesanal.</p></div>
             <div class="price">4.600</div>
           </div>
         </div>
 
         <div class="menu-panel" data-panel="dulces">
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Muffins">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Muffins</h4><p>Esponjosos muffins artesanales con receta de la abuelita, zumo de naranja, semillas de amapola y un toque de cardamomo.</p></div>
             <div class="price">2.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Queques">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Queques</h4><p>Nuestro clásico queque casero, perfecto para acompañar tu café o té.</p></div>
             <div class="price">2.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Galletones">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Galletones</h4><p>Recién horneados.</p></div>
             <div class="price">2.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Media Luna">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Media Luna</h4><p>Elaboradas con receta argentina.</p></div>
             <div class="price">1.700</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Medias Lunas Rellenas">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Medias Lunas Rellenas</h4><p>Manjar, crema de avellana, o jamón y queso.</p></div>
             <div class="price">2.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Palmeritas (4un)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Palmeritas (4un)</h4><p>Crujientes de hojaldre.</p></div>
             <div class="price">2.000</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Canelé">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Canelé</h4><p>Al estilo francés.</p></div>
             <div class="price">2.500</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Brownie">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Brownie</h4><p>Clásico de chocolate.</p></div>
             <div class="price">2.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Helados Artesanales">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Helados Artesanales</h4><p>Vainilla, chocolate suizo, maracuyá, frutos del bosque y pistacho.</p></div>
             <div class="price">4.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Pie de Limón">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Pie de Limón</h4><p>Con menta y jengibre, merengue y base de galleta crocante.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Quesillo Venezolano">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Quesillo Venezolano</h4><p>Suave flan acaramelado de receta venezolana (leche asada).</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Carrot Cake">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Carrot Cake</h4><p>Torta de zanahoria y azúcar morena con nueces claras, rellena y decorada con frosting de queso crema.</p></div>
             <div class="price">5.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Cheesecake">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cheesecake</h4><p>New York-style, con base crocante de galleta.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Cuatro Leches">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Cuatro Leches</h4><p>Bizcocho de vainilla con merengue, bañado en crema de leche, leche evaporada, leche condensada y canela.</p></div>
             <div class="price">5.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Tres Texturas de Chocolate">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tres Texturas de Chocolate</h4><p>Torta con tres presentaciones de chocolate belga: bizcocho, ganache y mousse, bañada en una fina cubierta.</p></div>
             <div class="price">5.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Kuchen de Manzana (Sin Azúcar)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Kuchen de Manzana (Sin Azúcar)</h4><p>Receta sin azúcar añadida.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Kuchen de Frambuesa (Sin Azúcar)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Kuchen de Frambuesa (Sin Azúcar)</h4><p>Receta sin azúcar añadida.</p></div>
             <div class="price">4.800</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Brownie (Sin Gluten y Sin Lactosa)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Brownie (Sin Gluten y Sin Lactosa)</h4><p>Un clásico reinventado: intenso, húmedo y con un toque de sal.</p></div>
             <div class="price">2.900</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Brookie (Sin Gluten y Sin Lactosa)">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Brookie (Sin Gluten y Sin Lactosa)</h4><p>Brownie y galleta en un solo bocado: húmedo, chocolatoso, con base de galleta.</p></div>
             <div class="price">3.200</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Tequeños con Queso">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Tequeños con Queso</h4><p>Dedo de queso blanco, envueltos en una fina masa y cocidos al horno.</p></div>
             <div class="price">5.300</div>
           </div>
-          <div class="menu-item" data-img="https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=1000&q=80" data-cap="Empanada de Hojaldre">
+          <div class="menu-item">
             <div class="menu-item-l"><h4>Empanada de Hojaldre</h4><p>Jamón y queso al horno.</p></div>
             <div class="price">3.400</div>
           </div>
         </div>
-      </div>
-
-      <div class="menu-preview" id="menuPreview">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=80" class="show" id="mpImg" alt="Vista previa del producto">
-        <div class="mp-cap show" id="mpCap">Café de la casa</div>
       </div>
     </div>
   </div>
@@ -988,15 +975,15 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
       <p class="sec-note">Café, oficio y detalle: fragmentos de nuestra barra, nuestra gente y nuestro espacio.</p>
     </div>
     <div class="masonry reveal" id="masonry">
-      <div class="gal-item h-l" data-cap="Latte art, cada mañana"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80" alt="Barista vertiendo latte art"><span class="tag">Preparación</span></div>
-      <div class="gal-item h-t" data-cap="Grano en punto de tueste"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="Granos de café tostados de cerca"><span class="tag">Café</span></div>
-      <div class="gal-item h-m" data-cap="La barra, al amanecer"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="Interior cálido de la cafetería"><span class="tag">Interior</span></div>
-      <div class="gal-item h-m" data-cap="Croissants recién horneados"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Croissants de mantequilla en exhibición"><span class="tag">Pastelería</span></div>
-      <div class="gal-item h-t" data-cap="Filtrado, gota a gota"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Preparación de café por método filtrado"><span class="tag">Barra</span></div>
-      <div class="gal-item h-l" data-cap="Nuestra fachada en Las Condes"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" alt="Arquitectura y madera del local"><span class="tag">Arquitectura</span></div>
-      <div class="gal-item h-m" data-cap="Mañanas compartidas"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=900&q=80" alt="Clientes disfrutando en el salón"><span class="tag">Clientes</span></div>
-      <div class="gal-item h-t" data-cap="Espuma en su punto"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Detalle de espuma de leche en taza"><span class="tag">Detalle</span></div>
-      <div class="gal-item h-m" data-cap="Tazas de autor, hechas a mano"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Taza de café sobre mesa de madera"><span class="tag">Detalle</span></div>
+      <div class="gal-item h-l"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80" alt="Barista vertiendo latte art"><span class="tag">Preparación</span></div>
+      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="Granos de café tostados de cerca"><span class="tag">Café</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="Interior cálido de la cafetería"><span class="tag">Interior</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Croissants de mantequilla en exhibición"><span class="tag">Pastelería</span></div>
+      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Preparación de café por método filtrado"><span class="tag">Barra</span></div>
+      <div class="gal-item h-l"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" alt="Arquitectura y madera del local"><span class="tag">Arquitectura</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=900&q=80" alt="Clientes disfrutando en el salón"><span class="tag">Clientes</span></div>
+      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Detalle de espuma de leche en taza"><span class="tag">Detalle</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Taza de café sobre mesa de madera"><span class="tag">Detalle</span></div>
     </div>
   </div>
 </section>
@@ -1206,24 +1193,9 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
       panels.forEach(function(p){ p.classList.remove('active'); });
       tab.classList.add('active');
       document.querySelector('.menu-panel[data-panel="'+tab.dataset.tab+'"]').classList.add('active');
-      var firstItem = document.querySelector('.menu-panel[data-panel="'+tab.dataset.tab+'"] .menu-item');
-      if(firstItem) setPreview(firstItem);
+      var scrollBox = document.querySelector('.menu-scroll');
+      if(scrollBox) scrollBox.scrollTop = 0;
     });
-  });
-  var mpImg = document.getElementById('mpImg');
-  var mpCap = document.getElementById('mpCap');
-  function setPreview(item){
-    var src = item.dataset.img, cap = item.dataset.cap;
-    if(!src) return;
-    mpImg.classList.remove('show'); mpCap.classList.remove('show');
-    setTimeout(function(){
-      mpImg.src = src; mpImg.alt = cap || '';
-      mpCap.textContent = cap || '';
-      mpImg.classList.add('show'); mpCap.classList.add('show');
-    }, 160);
-  }
-  document.querySelectorAll('.menu-item').forEach(function(item){
-    item.addEventListener('mouseenter', function(){ setPreview(item); });
   });
 
   var galItems = Array.prototype.slice.call(document.querySelectorAll('.gal-item'));
