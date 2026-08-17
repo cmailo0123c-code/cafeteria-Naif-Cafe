@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="dns-prefetch" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=68" imagesrcset="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=68 800w, https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=68 1200w, https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=68 1800w" imagesizes="100vw">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 
 :root{
@@ -118,6 +119,14 @@ nav.desktop-nav a:hover{color:var(--cream);}
 .burger.open span:nth-child(2){opacity:0;}
 .burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
 
+@media(max-width:900px){
+  nav.desktop-nav{display:none;}
+  .btn-reserve{display:none;}
+  .burger{display:flex;}
+  header{padding:24px 6vw;}
+  header.scrolled{padding:16px 6vw;}
+}
+
 #mobileNav{
   position:fixed;inset:0;background:var(--espresso-2);z-index:1000;
   display:flex;flex-direction:column;justify-content:center;padding:8vw 9vw;
@@ -158,6 +167,10 @@ nav.desktop-nav a:hover{color:var(--cream);}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 .hero-content{position:relative;z-index:5;width:100%;padding:0 6vw 9vw;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;}
+@media(max-width:700px){
+  .hero-content{flex-direction:column;align-items:flex-start;gap:26px;padding:0 7vw 16vw;}
+  .hero-sub{max-width:100%;}
+}
 .hero-eyebrow{opacity:0;transform:translateY(16px);transition:opacity 1s var(--ease) .3s, transform 1s var(--ease) .3s;}
 .hero.loaded .hero-eyebrow{opacity:1;transform:translateY(0);}
 .hero-title{
@@ -330,6 +343,7 @@ section{position:relative;}
 .gal-item.h-m{height:280px;}
 .gal-item.h-l{height:380px;}
 
+@media(max-width:1000px){.masonry{columns:3 200px;}}
 @media(max-width:700px){.masonry{columns:2 160px;}}
 
 /* lightbox */
@@ -501,7 +515,7 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
 
 <section class="hero" id="inicio">
   <div class="hero-media">
-    <img loading="eager" decoding="async" fetchpriority="high" id="heroImg" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=80" alt="Interior cálido de Naif Café, una casa convertida en cafetería">
+    <img loading="eager" decoding="async" fetchpriority="high" id="heroImg" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=68" srcset="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=68 800w, https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=68 1200w, https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1800&q=68 1800w" sizes="100vw" alt="Interior cálido de Naif Café, una casa convertida en cafetería">
   </div>
   <div class="hero-grain"></div>
   <div class="hero-content">
@@ -527,8 +541,8 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
   <div class="wrap hist-grid">
     <div class="hist-imgwrap reveal-l">
       <span class="hist-year">02</span>
-      <div class="hist-img-main"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1200&q=80" alt="Café servido en el patio de Naif Café Las Condes"></div>
-      <div class="hist-img-sub reveal-scale d2"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Clientes compartiendo una mañana en Naif Café"></div>
+      <div class="hist-img-main"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1200&q=68" alt="Café servido en el patio de Naif Café Las Condes"></div>
+      <div class="hist-img-sub reveal-scale d2"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=68" alt="Clientes compartiendo una mañana en Naif Café"></div>
     </div>
     <div class="hist-text reveal-r">
       <div class="eyebrow">Nuestra historia</div>
@@ -553,15 +567,15 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
     </div>
     <div class="team-grid reveal">
       <div class="team-card">
-        <div class="team-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=700&q=80" alt="Barista de Naif Café preparando un espresso"></div>
+        <div class="team-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=700&q=68" alt="Barista de Naif Café preparando un espresso"></div>
         <div class="team-info"><div class="team-role">Barra</div><div class="team-name">Café &amp; extracción</div><div class="team-desc">Cada espresso se calibra a diario para mantener el mismo perfil de sabor, taza tras taza.</div></div>
       </div>
       <div class="team-card">
-        <div class="team-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=80" alt="Cocina de Naif Café preparando brunch"></div>
+        <div class="team-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=700&q=68" alt="Cocina de Naif Café preparando brunch"></div>
         <div class="team-info"><div class="team-role">Cocina</div><div class="team-name">Brunch &amp; pastelería</div><div class="team-desc">Pan artesanal, huevos al punto y pastelería horneada en casa cada mañana.</div></div>
       </div>
       <div class="team-card">
-        <div class="team-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=700&q=80" alt="Salón y terraza de Naif Café"></div>
+        <div class="team-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=700&q=68" alt="Salón y terraza de Naif Café"></div>
         <div class="team-info"><div class="team-role">Sala</div><div class="team-name">Atención &amp; terraza</div><div class="team-desc">Un servicio cercano, pensado para que te quedes leyendo, trabajando o simplemente conversando.</div></div>
       </div>
     </div>
@@ -978,15 +992,15 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
       <p class="sec-note">Café, oficio y detalle: fragmentos de nuestra barra, nuestra gente y nuestro espacio.</p>
     </div>
     <div class="masonry reveal" id="masonry">
-      <div class="gal-item h-l"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=900&q=80" alt="Barista vertiendo latte art"><span class="tag">Preparación</span></div>
-      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="Granos de café tostados de cerca"><span class="tag">Café</span></div>
-      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="Interior cálido de la cafetería"><span class="tag">Interior</span></div>
-      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80" alt="Croissants de mantequilla en exhibición"><span class="tag">Pastelería</span></div>
-      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80" alt="Preparación de café por método filtrado"><span class="tag">Barra</span></div>
-      <div class="gal-item h-l"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80" alt="Arquitectura y madera del local"><span class="tag">Arquitectura</span></div>
-      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=900&q=80" alt="Clientes disfrutando en el salón"><span class="tag">Clientes</span></div>
-      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Detalle de espuma de leche en taza"><span class="tag">Detalle</span></div>
-      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Taza de café sobre mesa de madera"><span class="tag">Detalle</span></div>
+      <div class="gal-item h-l"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=640&q=68" alt="Barista vertiendo latte art"><span class="tag">Preparación</span></div>
+      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=660&q=68" alt="Granos de café tostados de cerca"><span class="tag">Café</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=660&q=68" alt="Interior cálido de la cafetería"><span class="tag">Interior</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=660&q=68" alt="Croissants de mantequilla en exhibición"><span class="tag">Pastelería</span></div>
+      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=660&q=68" alt="Preparación de café por método filtrado"><span class="tag">Barra</span></div>
+      <div class="gal-item h-l"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=660&q=68" alt="Arquitectura y madera del local"><span class="tag">Arquitectura</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=660&q=68" alt="Clientes disfrutando en el salón"><span class="tag">Clientes</span></div>
+      <div class="gal-item h-t"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=660&q=68" alt="Detalle de espuma de leche en taza"><span class="tag">Detalle</span></div>
+      <div class="gal-item h-m"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=660&q=68" alt="Taza de café sobre mesa de madera"><span class="tag">Detalle</span></div>
     </div>
   </div>
 </section>
@@ -1002,15 +1016,15 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
 <section class="exp-sec">
   <div class="wrap">
     <div class="exp-row">
-      <div class="exp-media reveal-scale"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=80" alt="Mañana tranquila en Naif Café"></div>
+      <div class="exp-media reveal-scale"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=68" alt="Mañana tranquila en Naif Café"></div>
       <div class="exp-text reveal-r"><div class="exp-num">01 — Ritmo</div><h3 class="exp-title">Slow mornings.</h3><p>Patio delantero, mesas afuera y adentro, y ese momento en que el café se sirve sin apuro.</p></div>
     </div>
     <div class="exp-row">
-      <div class="exp-media reveal-scale"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80" alt="Salón de Naif Café que alguna vez fue un living"></div>
+      <div class="exp-media reveal-scale"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=68" alt="Salón de Naif Café que alguna vez fue un living"></div>
       <div class="exp-text reveal-l"><div class="exp-num">02 — Espíritu</div><h3 class="exp-title">Feels like home.</h3><p>Una casa transformada en café, donde cada rincón —el living, el patio— invita a quedarse.</p></div>
     </div>
     <div class="exp-row">
-      <div class="exp-media reveal-scale"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1200&q=80" alt="Terraza pet friendly de Naif Café"></div>
+      <div class="exp-media reveal-scale"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=1200&q=68" alt="Terraza pet friendly de Naif Café"></div>
       <div class="exp-text reveal-r"><div class="exp-num">03 — Comunidad</div><h3 class="exp-title">Every dog welcome.</h3><p>Un espacio pet friendly, tranquilo, junto a la Universidad Adolfo Ibáñez.</p></div>
     </div>
   </div>
@@ -1026,17 +1040,17 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
       <div class="rev-slide active">
         <div class="rev-stars">★★★★★</div>
         <p class="rev-quote">Una casa acogedora convertida en café. Ideal para leer o desconectar un rato en un barrio tranquilo.</p>
-        <div class="rev-who"><div class="rev-avatar"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=200&q=80" alt="Cliente de Naif Café"></div><div class="rev-who-txt"><div class="rev-name">Cliente de Naif</div><div class="rev-src">Google Reviews</div></div></div>
+        <div class="rev-who"><div class="rev-avatar"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=120&q=68" alt="Cliente de Naif Café"></div><div class="rev-who-txt"><div class="rev-name">Cliente de Naif</div><div class="rev-src">Google Reviews</div></div></div>
       </div>
       <div class="rev-slide">
         <div class="rev-stars">★★★★★</div>
         <p class="rev-quote">El patio delantero y el salón se sienten como estar en casa. El Bacon Brunch, una excelente forma de partir la mañana.</p>
-        <div class="rev-who"><div class="rev-avatar"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1441123285228-1448e608f3d5?auto=format&fit=crop&w=200&q=80" alt="Cliente de Naif Café"></div><div class="rev-who-txt"><div class="rev-name">Cliente de Naif</div><div class="rev-src">Google Reviews</div></div></div>
+        <div class="rev-who"><div class="rev-avatar"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1441123285228-1448e608f3d5?auto=format&fit=crop&w=120&q=68" alt="Cliente de Naif Café"></div><div class="rev-who-txt"><div class="rev-name">Cliente de Naif</div><div class="rev-src">Google Reviews</div></div></div>
       </div>
       <div class="rev-slide">
         <div class="rev-stars">★★★★★</div>
         <p class="rev-quote">Pet friendly de verdad: fuimos con nuestro perro y se sintió bienvenido en todo momento.</p>
-        <div class="rev-who"><div class="rev-avatar"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80" alt="Cliente de Naif Café"></div><div class="rev-who-txt"><div class="rev-name">Cliente de Naif</div><div class="rev-src">Google Reviews</div></div></div>
+        <div class="rev-who"><div class="rev-avatar"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=68" alt="Cliente de Naif Café"></div><div class="rev-who-txt"><div class="rev-name">Cliente de Naif</div><div class="rev-src">Google Reviews</div></div></div>
       </div>
     </div>
     <div class="rev-dots" id="revDots"></div>
@@ -1075,7 +1089,7 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
         <a href="https://www.google.com/maps?q=Av.+Presidente+Errazuriz+3471+Las+Condes+Santiago" target="_blank" rel="noopener" class="btn btn-solid loc-cta">Cómo llegar <span class="arrow">→</span></a>
       </div>
       <div class="loc-visual">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c?auto=format&fit=crop&w=1400&q=80" alt="Fachada exterior de Naif Café en Las Condes">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c?auto=format&fit=crop&w=1400&q=68" alt="Fachada exterior de Naif Café en Las Condes">
         <div class="loc-map"><iframe src="https://www.google.com/maps?q=Av.+Presidente+Errazuriz+3471+Las+Condes+Santiago&output=embed" loading="lazy" title="Mapa de ubicación de Naif Café"></iframe></div>
       </div>
     </div>
@@ -1088,11 +1102,11 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
       <div><div class="eyebrow">Comunidad</div><h2 class="sec-title">Síguenos <em>@naifcafe_cl</em></h2></div>
     </div>
     <div class="ig-grid reveal">
-      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=500&q=80" alt="Taza de espresso"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Espresso de la semana</span></div></div>
-      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=500&q=80" alt="Latte art"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Arte en cada taza</span></div></div>
-      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80" alt="Croissant"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Recién horneado</span></div></div>
-      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=500&q=80" alt="Interior"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Nuestro rincón favorito</span></div></div>
-      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=500&q=80" alt="Clientes"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Gracias por venir</span></div></div>
+      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=500&q=68" alt="Taza de espresso"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Espresso de la semana</span></div></div>
+      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=500&q=68" alt="Latte art"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Arte en cada taza</span></div></div>
+      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=68" alt="Croissant"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Recién horneado</span></div></div>
+      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=500&q=68" alt="Interior"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Nuestro rincón favorito</span></div></div>
+      <div class="ig-item"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=500&q=68" alt="Clientes"><div class="ig-ov"><svg viewBox="0 0 24 24" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Gracias por venir</span></div></div>
     </div>
   </div>
 </section>
@@ -1176,15 +1190,16 @@ footer{padding:110px 0 40px;border-top:1px solid var(--line);position:relative;o
   document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-scale').forEach(function(el){ io.observe(el); });
 
   if(!reduce){
-    document.querySelectorAll('.exp-media img').forEach(function(img){
-      var wrap = img.closest('.exp-media');
-      var obs = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){
-          if(en.isIntersecting) img.style.transform='scale(1)'; else img.style.transform='scale(1.1)';
-        });
-      },{threshold:0.1});
-      obs.observe(wrap);
-      img.style.transition='transform 1.6s cubic-bezier(.22,.61,.16,1)';
+    var expObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var img = en.target.querySelector('img');
+        if(!img) return;
+        img.style.transform = en.isIntersecting ? 'scale(1)' : 'scale(1.1)';
+      });
+    },{threshold:0.1});
+    document.querySelectorAll('.exp-media').forEach(function(wrap){
+      wrap.querySelector('img').style.transition='transform 1.6s cubic-bezier(.22,.61,.16,1)';
+      expObs.observe(wrap);
     });
   }
 
